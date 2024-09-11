@@ -1,13 +1,13 @@
 /* variables */
 
 :root {
-	--color-text: white;
-	--color-background: black;
-	--color-slider-background: #101010;
-	--color-gallery-background: gray;
-	--color-pagination: green;
-	--color-pagination-hover: yellow;
-	--color-pagination-active: red;
+	--color-text: #fafafa;
+	--color-background: hsl(240, 5%, 10%);
+	--color-slider-background: hsl(240, 5%, 12%);
+	--color-gallery-background: hsl(240, 5%, 15%);
+	--color-pagination: #2ac841;
+	--color-pagination-hover: #ffbc2f;
+	--color-pagination-active: #fc6058;
 
 	--container-width: 50rem;
 	--container-padding-x: 0.9375rem;
@@ -68,9 +68,9 @@ button {
 
 body {
 	font-family: 'Inter', 'Roboto', 'Arial', sans-serif;
-	font-size: 1.5rem;
+	font-size: 1.25rem;
 	font-weight: 400;
-	line-height: 1;
+	line-height: 1.5;
 
 	color: var(--color-text);
 	background-color: var(--color-background);
@@ -97,6 +97,10 @@ body {
 	display: flex;
 	flex-wrap: wrap;
 	align-items: center;
+	row-gap: 1rem;
+
+	padding-bottom: 1rem;
+	margin-block: 0.9375rem;
 
 	overflow: hidden;
 	border-radius: 0.5rem;
@@ -130,12 +134,15 @@ body {
 .slider:has(#input1:checked) .gallery-track {
 	transform: translateX(0%);
 }
+
 .slider:has(#input2:checked) .gallery-track {
 	transform: translateX(-100%);
 }
+
 .slider:has(#input3:checked) .gallery-track {
 	transform: translateX(-200%);
 }
+
 .slider:has(#input4:checked) .gallery-track {
 	transform: translateX(-300%);
 }
@@ -145,6 +152,7 @@ body {
 .titles {
 	flex: 0 0 50%;
 
+	height: 1.875rem;
 	padding-left: 1rem;
 
 	overflow: hidden;
@@ -152,27 +160,31 @@ body {
 
 .title-track {
 	display: flex;
+	flex-direction: column;
 
 	transition: transform var(--transition-duration) ease 0s;
 }
 
 .title {
-	flex: 0 0 150%;
+	flex: 0 0 auto;
 }
 
 /* titles logic */
 
 .slider:has(#input1:checked) .title-track {
-	transform: translateX(0%);
+	transform: translateY(0%);
 }
+
 .slider:has(#input2:checked) .title-track {
-	transform: translateX(-150%);
+	transform: translateY(-25%);
 }
+
 .slider:has(#input3:checked) .title-track {
-	transform: translateX(-300%);
+	transform: translateY(-50%);
 }
+
 .slider:has(#input4:checked) .title-track {
-	transform: translateX(-450%);
+	transform: translateY(-75%);
 }
 
 /* inputs */
@@ -235,4 +247,23 @@ body {
 .input:checked + .label:active .dot {
 	border-color: var(--color-pagination-active);
 	transition: none;
+}
+
+/* adaptive */
+
+@media screen and (max-width: 48em) {
+	.titles {
+		flex: 0 0 100%;
+
+		padding-left: 0;
+
+		text-align: center;
+	}
+
+	.inputs {
+		flex: 0 0 100%;
+		justify-content: center;
+
+		padding-right: 0;
+	}
 }
