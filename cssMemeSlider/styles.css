@@ -175,7 +175,7 @@ body {
 	transform: translateX(-450%);
 }
 
-/* pagination */
+/* inputs */
 
 .inputs {
 	flex: 0 0 50%;
@@ -188,10 +188,51 @@ body {
 }
 
 .input {
+	display: none;
 }
 
 .label {
+	padding: 0.375rem;
+
+	cursor: pointer;
 }
 
 .dot {
+	width: 1rem;
+	aspect-ratio: 1 / 1;
+
+	color: var(--color-pagination);
+	background-color: currentColor;
+	border: 0.125rem solid currentColor;
+	border-radius: 50%;
+
+	transition: all var(--transition-duration) ease 0s;
+}
+
+.input:checked + .label .dot {
+	background-color: transparent;
+}
+
+/* input states */
+
+.label:hover .dot {
+	color: var(--color-pagination-hover);
+	background-color: currentColor;
+	border-color: currentColor;
+}
+
+.label:active .dot {
+	color: var(--color-pagination-active);
+	background-color: currentColor;
+	border-color: currentColor;
+	transition: none;
+}
+
+.input:checked + .label:hover .dot {
+	border-color: var(--color-pagination-hover);
+}
+
+.input:checked + .label:active .dot {
+	border-color: var(--color-pagination-active);
+	transition: none;
 }
