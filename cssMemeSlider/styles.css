@@ -3,11 +3,11 @@
 :root {
 	--color-text: #fafafa;
 	--color-background: hsl(240, 5%, 10%);
-	--color-slider-background: hsl(240, 5%, 12%);
-	--color-gallery-background: hsl(240, 5%, 15%);
-	--color-pagination: #2ac841;
-	--color-pagination-hover: #ffbc2f;
-	--color-pagination-active: #fc6058;
+	--color-slider-background: hsl(240, 5%, 15%);
+	--color-gallery-background: hsl(240, 5%, 12%);
+	--color-pagination: #71abfe;
+	--color-pagination-hover: #fafafa;
+	--color-pagination-active: #b8b8b8;
 
 	--container-width: 50rem;
 	--container-padding-x: 0.9375rem;
@@ -103,10 +103,8 @@ body {
 	margin-block: 0.9375rem;
 
 	overflow: hidden;
-	border: 0.0625rem solid hsl(240 5% 8% / 0.8);
 	border-radius: 0.5rem;
 	background-color: var(--color-slider-background);
-	box-shadow: 0 0.5rem 1.5rem hsl(240 5% 8% / 0.5);
 }
 
 /* gallery */
@@ -255,14 +253,12 @@ body {
 
 @media screen and (max-width: 48em) {
 	.titles {
+		order: 2;
 		flex: 0 0 100%;
-
-		padding-left: 0;
-
-		text-align: center;
 	}
 
 	.inputs {
+		order: 1;
 		flex: 0 0 100%;
 		justify-content: center;
 
