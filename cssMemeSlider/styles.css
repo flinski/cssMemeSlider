@@ -103,8 +103,10 @@ body {
 	margin-block: 0.9375rem;
 
 	overflow: hidden;
+	border: 0.0625rem solid hsl(240 5% 8% / 0.8);
 	border-radius: 0.5rem;
 	background-color: var(--color-slider-background);
+	box-shadow: 0 0.5rem 1.5rem hsl(240 5% 8% / 0.5);
 }
 
 /* gallery */
@@ -124,7 +126,7 @@ body {
 
 .image {
 	flex: 0 0 100%;
-	height: 37.5rem;
+	max-height: 37.5rem;
 	object-fit: contain;
 	object-position: center;
 }
