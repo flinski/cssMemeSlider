@@ -3,6 +3,7 @@
 :root {
 	--color-text: white;
 	--color-background: black;
+	--color-slider-background: #101010;
 	--color-gallery-background: gray;
 	--color-pagination: green;
 	--color-pagination-hover: yellow;
@@ -36,8 +37,7 @@ h3,
 h4,
 h5,
 h6 {
-	font-size: inherit;
-	font-weight: inherit;
+	font: inherit;
 }
 
 img {
@@ -99,6 +99,68 @@ body {
 	align-items: center;
 
 	overflow: hidden;
+	border-radius: 0.5rem;
+	background-color: var(--color-slider-background);
 }
 
 /* gallery */
+
+.gallery {
+	flex: 0 0 100%;
+
+	overflow: hidden;
+	background-color: var(--color-gallery-background);
+}
+
+.gallery-track {
+	display: flex;
+
+	transition: transform var(--transition-duration) ease 0s;
+}
+
+.image {
+	flex: 0 0 100%;
+	height: 37.5rem;
+	object-fit: contain;
+	object-position: center;
+}
+
+/* gallery logic */
+
+.slider:has(#input1:checked) .gallery-track {
+	transform: translateX(0%);
+}
+.slider:has(#input2:checked) .gallery-track {
+	transform: translateX(-100%);
+}
+.slider:has(#input3:checked) .gallery-track {
+	transform: translateX(-200%);
+}
+.slider:has(#input4:checked) .gallery-track {
+	transform: translateX(-300%);
+}
+
+/* titles */
+
+.titles {
+}
+
+.title-track {
+}
+
+.title {
+}
+
+/* pagination */
+
+.inputs {
+}
+
+.input {
+}
+
+.label {
+}
+
+.dot {
+}
