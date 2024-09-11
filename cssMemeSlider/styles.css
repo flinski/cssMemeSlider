@@ -1,13 +1,22 @@
 /* variables */
 
 :root {
+	--color-text: white;
+	--color-background: black;
+	--color-gallery-background: gray;
+	--color-pagination: green;
+	--color-pagination-hover: yellow;
+	--color-pagination-active: red;
+
+	--container-width: 50rem;
+	--container-padding-x: 0.9375rem;
+
+	--transition-duration: 0.5s;
 }
 
 /* normalize */
 
-*,
-*::before,
-*::after {
+* {
 	box-sizing: border-box;
 
 	margin: 0;
@@ -59,9 +68,12 @@ button {
 
 body {
 	font-family: 'Inter', 'Roboto', 'Arial', sans-serif;
-	font-size: 1rem;
+	font-size: 1.5rem;
 	font-weight: 400;
 	line-height: 1;
+
+	color: var(--color-text);
+	background-color: var(--color-background);
 }
 
 /* utils */
@@ -69,6 +81,10 @@ body {
 .wrapper {
 	overflow: hidden;
 	min-height: 100%;
+
+	display: flex;
+	justify-content: center;
+	align-items: center;
 }
 
 .container {
@@ -76,3 +92,13 @@ body {
 	margin-inline: auto;
 	padding-inline: var(--container-padding-x);
 }
+
+.slider {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+
+	overflow: hidden;
+}
+
+/* gallery */
